@@ -1,0 +1,206 @@
+/* Fundo animado mais fluido e colorido */
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Brilho pulsante no h1 */
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #00c3ff, 0 0 30px #ff6a00;
+  }
+  50% {
+    text-shadow: 0 0 20px #ffff1c, 0 0 30px #00c3ff, 0 0 40px #d500f9;
+  }
+}
+
+/* Suave flutuação nos itens da tabela */
+@keyframes floatRow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Container geral */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f1117;
+  overflow-x: hidden;
+}
+
+/* Cabeçalho animado */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(-45deg, #00c3ff, #ffff1c, #ff6a00, #d500f9);
+  background-size: 400% 400%;
+  animation: moveBackground 10s ease infinite;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  color: white;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Título principal com brilho */
+nav h1 {
+  font-size: 2.8rem;
+  margin: 0;
+  flex: 1 1 100%;
+  text-align: center;
+  animation: pulseGlow 3s infinite;
+  font-weight: bold;
+}
+
+/* Menus */
+nav h3 {
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+nav h3::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s ease;
+}
+
+nav h3:hover {
+  color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+nav h3:hover::after {
+  width: 100%;
+}
+
+/* Conteúdo principal */
+div {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #1e212b;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+/* Filtros com aparência neon */
+select {
+  width: 30%;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    margin: 0.5rem 1% 1rem 1%;
+    transition: border 0.3s;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 12px #00c3ff;
+  background-color: #1f222d;
+}
+
+/* Tabela estilizada */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+thead {
+  background: linear-gradient(90deg, #00c3ff, #ff6a00);
+  color: white;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 195, 255, 0.1);
+  animation: floatRow 1s ease infinite;
+}
+
+a {
+  color: #4fc3f7;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff9800;
+}
+
+/* Lista de exames filtrados */
+ul {
+  list-style: none;
+  padding: 1rem 0 0;
+  margin-top: 2rem;
+}
+
+li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #444;
+  font-size: 1.1rem;
+  color: #ddd;
+  transition: 0.3s ease;
+}
+
+li:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav h3 {
+    margin: 0.5rem 0;
+  }
+
+  table, thead, tbody, th, td, tr {
+    font-size: 0.9rem;
+  }
+
+  select {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  div {
+    padding: 1rem;
+  }
+}
