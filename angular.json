@@ -39,7 +39,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/Angular-exams/",
+              "baseHref": "/exams/",
               "budgets": [
                 {
                   "type": "initial",
