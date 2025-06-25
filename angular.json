@@ -19,7 +19,7 @@
           "options": {
             "outputPath": "dist/Angular-exams",
             "index": "src/index.html",
-             "baseHref": "/Angular-exams/",
+             "baseHref": "/exams/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
