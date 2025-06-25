@@ -17,8 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/test",
+            "outputPath": "dist/Angular-exams",
             "index": "src/index.html",
+             "baseHref": "/Angular-exams/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -38,6 +39,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/Angular-exams/",
               "budgets": [
                 {
                   "type": "initial",
@@ -95,8 +97,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0b05c317-b2e5-46e9-b99e-24b66698f0ae"
   }
 }
