@@ -1,0 +1,38 @@
+<p>notices works!</p>
+
+<div class="workSpace">
+
+<select [(ngModel)]="selectedYear">
+    <option [ngValue]="null" >Years</option>
+    <option *ngFor="let year of [2021, 2022, 2023,2024, 2025]" [ngValue]="year" >{{year}} </option>
+</select>
+
+<select [(ngModel)]="selectedInstituition" >
+  <option [ngValue]="''">Instituitions</option>
+  <option *ngFor="let instituition of ['ACIPOL', 'UP','UEM', 'IFP']" [ngValue]="instituition">{{instituition}} </option>  
+</select>
+
+
+
+
+
+<table>
+<thead>
+  <tr>
+    <th>Year</th>
+    <th>Instituition</th>
+    <th>Download</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of filteredNotices" >
+    <td>{{item.year}} </td>
+    <td>{{item.instituition}} </td>
+    <td> <a href="{{item.link}}">Download</a></td>
+  </tr>
+</tbody>
+
+</table>
+
+
+</div>
