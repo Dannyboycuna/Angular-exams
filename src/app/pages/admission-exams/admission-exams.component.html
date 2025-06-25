@@ -1,0 +1,46 @@
+<h1>admission-exams works!</h1>
+
+
+<div>
+  <select [(ngModel)]="selectedInstituition">
+    <option [ngValue]="''">All instituitions</option>
+    <option *ngFor="let instituition of ['UP', 'UEM', 'UJC']" [ngValue]="instituition">{{instituition}} </option>
+  </select>
+
+  <select [(ngModel)]="selectedSubject">
+    <option [ngValue]="''">All subjects</option>
+    <option
+      *ngFor="let subject of ['Portuguese', 'Mathematics', 'Physics', 'Phylosophy', 'French', 'English', 'Drawing', 'Geography', 'History']"
+      [ngValue]="subject">{{subject}} </option>
+  </select>
+
+  <select [(ngModel)]="selectedYear"> Year
+    <option [ngValue]="null">All years</option>
+    <option *ngFor="let year of [2004, 2007, 2009, 2010, 2011, 2013, 2014, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]" [ngValue]="year">{{year}}
+    </option>
+  </select>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Instituition</th>
+        <th>Subject</th>
+        <th>Year</th>
+        <th #download>Download</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of filteredExams">
+        <td>{{item.instituition}} </td>
+        
+        <td>{{item.subject}} </td>
+        <td>{{item.year}} </td>
+        <td><a href="{{item.link}}">Download</a> </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

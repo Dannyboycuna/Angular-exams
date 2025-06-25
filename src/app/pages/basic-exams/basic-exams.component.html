@@ -1,0 +1,63 @@
+<section><h1>basic-exams works!</h1>
+  
+  
+  
+  
+  
+  <div>
+  
+  <select [(ngModel)]="selectedGrade">
+    <option [ngValue]="''">All Grades</option>
+    <option *ngFor="let grade of ['10', '12']" [ngValue]="grade">
+      {{grade}}
+    </option>
+  </select>
+
+  
+  <select [(ngModel)]="selectedSubject">
+    <option [ngValue]="''">All subjects</option>
+    <option
+    *ngFor="let subject of ['Portuguese', 'Mathematics', 'Physics', 'Phylosophy', 'French', 'English', 'Drawing', 'History']"
+    [ngValue]="subject">{{subject}} </option>
+  </select>
+  
+  <select [(ngModel)]="selectedYear"> Year
+    <option [ngValue]="null">All years</option>
+    <option *ngFor="let year of [2004, 2009, 2010, 2011,2012, 2013, 2014,2015, 2016, 2017, 2018, 2019]" [ngValue]="year">{{year}}
+    </option>
+  </select>
+  
+    <select [(ngModel)]="selectedTerm">
+      <option [ngValue]="''">All Terms</option>
+      <option *ngFor="let term of ['first', 'second', 'extraordinary']" [ngValue]="term">{{term}} </option>
+    </select>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Grade</th>
+        <th>Subject</th>
+        <th>Year</th>
+        <th>Term</th>
+        <th #download>Download</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of filteredExams">
+        <td>{{item.grade}} </td>
+        <td>{{item.subject}} </td>
+
+        <td>{{item.year}} </td>
+        <td>{{item.term}} </td>
+        <td><a href="{{item.link}}">Download</a> </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+</section>

@@ -1,0 +1,201 @@
+/* Animações */
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #00c3ff, 0 0 30px #ff6a00;
+  }
+
+  50% {
+    text-shadow: 0 0 15px #ffff1c, 0 0 25px #00c3ff, 0 0 35px #d500f9;
+  }
+}
+
+/* Reset e fonte */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(-45deg, #1c1c2b, #202a3a, #2d3548);
+  background-size: 300% 300%;
+  animation: moveBackground 20s ease infinite;
+  color: #fff;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background: linear-gradient(-45deg, #00c3ff, #ffff1c, #ff6a00, #d500f9);
+  background-size: 400% 400%;
+  animation: moveBackground 12s ease infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  position: relative;
+}
+
+/* Título principal */
+nav h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  flex: 1 1 100%;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: white;
+  animation: glow 3s ease-in-out infinite;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease;
+}
+
+nav h1:hover {
+  transform: scale(1.05);
+}
+
+/* Links ou subtítulos */
+nav h3 {
+  color: white;
+  margin: 0.3rem 1rem;
+  font-size: 1.3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav h3:hover {
+  cursor: pointer;
+  color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+/* Corpo do conteúdo */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+/* Filtros */
+select {
+  margin: 1rem 1rem 1rem 0;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #2a2d3a;
+  color: #fff;
+  box-shadow: 0 0 5px #00c3ff;
+  transition: 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 12px #00c3ff;
+  background-color: #1c1e27;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  color: #fff;
+}
+
+thead {
+  background: linear-gradient(to right, #00c3ff, #ff6a00);
+}
+
+th,
+td {
+  padding: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: left;
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Links */
+a {
+  color: #4fc3f7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff9800;
+}
+
+/* Lista de exames */
+ul {
+  margin-top: 2rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #555;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+li:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav h3 {
+    margin: 0.5rem 0;
+  }
+
+  select {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
